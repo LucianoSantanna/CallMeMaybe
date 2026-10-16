@@ -1,0 +1,25 @@
+[project]
+name = "call-me-maybe"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "accelerate>=1.15.0",
+    "huggingface-hub>=2.2.0",
+    "numpy>=2.5.3",
+    "pydantic>=2.14.0",
+    "torch>=2.14.1",
+    "transformers>=5.19.0",
+]
+
+[dependency-groups]
+dev = [
+    "flake8>=7.4.1",
+    "mypy>=2.4.0",
+    "pytest>=9.1.1",
+]
+
+[[tool.mypy.overrides]]
+module = ["llm_sdk", "llm_sdk.*"]
+ignore_errors = true
